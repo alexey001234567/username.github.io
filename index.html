@@ -194,7 +194,12 @@ Last Name: <input type="text" name="last_name" /> <br />
 
 
 <script>
- 
+ if (typeof(Worker) !== "undefined") {
+   console.log('THERE IS  worker');
+   w = new Worker("webWorker.js");
+} else {
+ console.log('THERE IS NO worker'); 
+}
 <!-- if ('serviceWorker' in navigator) { -->
  
     <!-- navigator.serviceWorker.register('./service worker.js') -->
