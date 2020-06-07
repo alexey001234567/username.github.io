@@ -192,13 +192,35 @@ Last Name: <input type="text" name="last_name" /> <br />
 
 
 <script>
-
-for (i in  navigator){
-	console.log(i);
+// Проверка того, что наш браузер поддерживает Service Worker API.
+if ('serviceWorker' in navigator) {
+    // Весь код регистрации у нас асинхронный.
+    navigator.serviceWorker.register('./service worker.js')
+      .then(() => navigator.serviceWorker.ready.then((worker) => {
+        worker.sync.register('syncdata');
+      }))
+      .catch((err) => console.log(err));
 }
- navigator.serviceWorker? console.log(123): alert(123);
 
 
+
+
+<!-- if ('serviceWorker' in navigator) { -->
+  <!-- navigator.serviceWorker.register('/service worker.js').then(function(reg) { -->
+
+  <!-- if(reg.installing) { -->
+    <!-- console.log('Service worker installing'); -->
+  <!-- } else if(reg.waiting) { -->
+    <!-- console.log('Service worker installed'); -->
+  <!-- } else if(reg.active) { -->
+    <!-- console.log('Service worker active'); -->
+  <!-- } -->
+
+  <!-- }).catch(function(error) { -->
+    <!-- // registration failed -->
+<!-- console.log('Registration failed with ' + error); -->
+  <!-- }); -->
+<!-- } -->
 
 
 
