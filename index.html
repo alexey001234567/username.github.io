@@ -181,6 +181,7 @@ Last Name: <input type="text" name="last_name" /> <br />
   <div class="small"><img class="tesImgsd" src="img/1 (2).jpg"></img></div>
   <div class="small"><img class="tesImgsd" src="img/1 (4).jpg"></img></div>
   <div class="small"><img class="tesImgsd" src="img/1 (1).jpg"></img></div>
+    <div class="small"><img class="tesImgsd" src="img/asd.jpg"></img></div>
 </div>                    
                           
                           
@@ -192,15 +193,15 @@ Last Name: <input type="text" name="last_name" /> <br />
 
 
 <script>
-// Проверка того, что наш браузер поддерживает Service Worker API.
-if ('serviceWorker' in navigator) {
-    // Весь код регистрации у нас асинхронный.
-    navigator.serviceWorker.register('./service worker.js')
-      .then(() => navigator.serviceWorker.ready.then((worker) => {
-        worker.sync.register('syncdata');
-      }))
-      .catch((err) => console.log(err));
-}
+ 
+<!-- if ('serviceWorker' in navigator) { -->
+ 
+    <!-- navigator.serviceWorker.register('./service worker.js') -->
+      <!-- .then(() => navigator.serviceWorker.ready.then((worker) => { -->
+        <!-- worker.sync.register('syncdata'); -->
+      <!-- })) -->
+      <!-- .catch((err) => console.log(err)); -->
+<!-- } -->
 
 
 
